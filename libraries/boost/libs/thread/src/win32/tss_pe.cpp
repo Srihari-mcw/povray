@@ -112,8 +112,8 @@ extern BOOL (WINAPI * const _pDefaultRawDllMainOrig)(HANDLE, DWORD, LPVOID) = NU
 
     //Definitions required by implementation
 
-    #if (_MSC_VER < 1300) || (_MSC_VER > 1900) // 1300 == VC++ 7.0, 1900 == VC++ 14.0
-        typedef void (__cdecl *_PVFV)();
+    #if (_MSC_VER < 1300) || (_MSC_VER > 1941) // 1300 == VC++ 7.0, 1941 == VC++ 14.32
+        typedef void(__cdecl* _PVFV)();
         #define INIRETSUCCESS
         #define PVAPI void __cdecl
     #else

@@ -1238,7 +1238,7 @@ int GetNoiseGen (const TPATTERN *TPat, const TraceThreadData *Thread);
 DENSITY_FILE *Create_Density_File ();
 DENSITY_FILE *Copy_Density_File (DENSITY_FILE *);
 void Destroy_Density_File (DENSITY_FILE *);
-void Read_Density_File (IStream *dfile, DENSITY_FILE *df);
+void Read_Density_File (pov_base::IStream *dfile, DENSITY_FILE *df);
 int PickInCube (const Vector3d& tv, Vector3d& p1);
 
 void InitializePatternGenerators(void);
