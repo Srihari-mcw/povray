@@ -103,9 +103,6 @@ Build Steps
     make unofficial versions distinguishable from each other. Remove the
     `#error` directive afterwards to proceed with the build. Note that
     if you do not do this you will get compile errors.
-    **Note:** (Presently with the updated code the GUI project is skipped for building,
-    as the cmedit64.dll and povcmax64.dll from official windows distribution are
-    incompatible with VS2022. The console version alone is available to build and test).
 
     Note: If you are building in a Git local workspace, we recommend you run
     `git update-index --skip-workspace source/base/build.h`. This will keep
