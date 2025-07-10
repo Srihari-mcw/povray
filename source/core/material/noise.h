@@ -224,11 +224,12 @@ inline DBL Noise(const Vector3d& EPoint, int noise_generator) { return PortableN
 inline void DNoise(Vector3d& result, const Vector3d& EPoint) { PortableDNoise(result, EPoint); }
 inline void Noise2D(const Vector3d& EPoint, int noise_generator, double &value) { }//PortableNoise2D(EPoint, noise_generator, value); }
 inline void DNoise2D(Vector3d& result, const Vector3d& EPoint) { }//PortableDNoise2D(result, EPoint); }
-inline DBL Noise8D(Vector3d& result, const Vector3d& EPoint) { return 0.0;}
-void DTurbulence (Vector3d& result, const Vector3d& EPoint, const GenericTurbulenceWarp* Turb) {}
-void Initialize_Waves(vector<double>& waveFrequencies, vector<Vector3d>& waveSources, unsigned int numberOfWaves) {}
-DBL Turbulence (const Vector3d& EPoint, const GenericTurbulenceWarp* Turb, int noise_generator) {return 0.0;}
+inline DBL Noise8D(const Vector3d& result,int noise_generator) { return 0.0;}
+inline void DTurbulence (Vector3d& result, const Vector3d& EPoint, const GenericTurbulenceWarp* Turb) {}
+inline void Initialize_Waves(vector<double>& waveFrequencies, vector<Vector3d>& waveSources, unsigned int numberOfWaves) {}
+inline DBL Turbulence (const Vector3d& EPoint, const GenericTurbulenceWarp* Turb, int noise_generator) {return 0.0;}
 #endif // TRY_OPTIMIZED_NOISE
+
 
 void Initialize_WavesAVX512(vector<double>& waveFrequencies, vector<Vector3d>& waveSources, unsigned int numberOfWaves);
 void Initialize_WavesAVX(vector<double>& waveFrequencies, vector<Vector3d>& waveSources, unsigned int numberOfWaves);

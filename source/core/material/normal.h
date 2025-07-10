@@ -125,7 +125,7 @@ void Perturb_Normal (Vector3d& Layer_Normal, const TNORMAL *Tnormal, const Vecto
 typedef void (*wrinklesFunction) (const Vector3d& EPoint, const TNORMAL *Tnormal, Vector3d& normal);
 extern wrinklesFunction wrinkles;
 #else
-void wrinkles (const Vector3d& EPoint, const TNORMAL *Tnormal, Vector3d& normal);
+inline void wrinkles (const Vector3d& EPoint, const TNORMAL *Tnormal, Vector3d& normal) {};
 #endif
 
 void wrinklesAVX512 (const Vector3d& EPoint, const TNORMAL *Tnormal, Vector3d& normal);
