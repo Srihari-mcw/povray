@@ -1445,7 +1445,7 @@ endif
 if BUILD_x86avx512
 libraries_platformcpu += libx86avx512.a
 libx86avx512_a_SOURCES =  `echo $files_x86avx512`
-libx86avx512_a_CXXFLAGS = \$(CXXFLAGS) -mavx512f
+libx86avx512_a_CXXFLAGS = \$(CXXFLAGS) -mavx512f -mfma
 endif
 
 # Libraries to build.
