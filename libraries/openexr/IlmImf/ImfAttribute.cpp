@@ -48,108 +48,108 @@
 
 #include "ImfNamespace.h"
 
-OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER 
+OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 
 
 using ILMTHREAD_NAMESPACE::Mutex;
 using ILMTHREAD_NAMESPACE::Lock;
 
 
-Attribute::Attribute () {}
+Attribute::Attribute() {}
 
 
-Attribute::~Attribute () {}
+Attribute::~Attribute() {}
 
 
 namespace {
 
-struct NameCompare: std::binary_function <const char *, const char *, bool>
-{
-    bool
-    operator () (const char *x, const char *y) const
+    struct NameCompare
     {
-	return strcmp (x, y) < 0;
+        bool
+            operator () (const char* x, const char* y) const
+        {
+            return strcmp(x, y) < 0;
+        }
+    };
+
+
+    typedef Attribute* (*Constructor)();
+    typedef std::map <const char*, Constructor, NameCompare> TypeMap;
+
+
+    class LockedTypeMap : public TypeMap
+    {
+    public:
+
+        Mutex mutex;
+    };
+
+
+    LockedTypeMap&
+        typeMap()
+    {
+        static Mutex criticalSection;
+        Lock lock(criticalSection);
+
+        static LockedTypeMap* typeMap = 0;
+
+        if (typeMap == 0)
+            typeMap = new LockedTypeMap();
+
+        return *typeMap;
     }
-};
-
-
-typedef Attribute* (*Constructor)();
-typedef std::map <const char *, Constructor, NameCompare> TypeMap;
-
-
-class LockedTypeMap: public TypeMap
-{
-  public:
-
-    Mutex mutex;
-};
-
-
-LockedTypeMap &
-typeMap ()
-{
-    static Mutex criticalSection;
-    Lock lock (criticalSection);
-
-    static LockedTypeMap* typeMap = 0;
-
-    if (typeMap == 0)
-	typeMap = new LockedTypeMap ();
-
-    return *typeMap;
-}
 
 
 } // namespace
 
 
-bool		
-Attribute::knownType (const char typeName[])
+bool
+Attribute::knownType(const char typeName[])
 {
     LockedTypeMap& tMap = typeMap();
-    Lock lock (tMap.mutex);
+    Lock lock(tMap.mutex);
 
-    return tMap.find (typeName) != tMap.end();
-}
-
-
-void	
-Attribute::registerAttributeType (const char typeName[],
-			          Attribute *(*newAttribute)())
-{
-    LockedTypeMap& tMap = typeMap();
-    Lock lock (tMap.mutex);
-
-    if (tMap.find (typeName) != tMap.end())
-	THROW (IEX_NAMESPACE::ArgExc, "Cannot register image file attribute "
-			    "type \"" << typeName << "\". "
-			    "The type has already been registered.");
-
-    tMap.insert (TypeMap::value_type (typeName, newAttribute));
+    return tMap.find(typeName) != tMap.end();
 }
 
 
 void
-Attribute::unRegisterAttributeType (const char typeName[])
+Attribute::registerAttributeType(const char typeName[],
+    Attribute* (*newAttribute)())
 {
     LockedTypeMap& tMap = typeMap();
-    Lock lock (tMap.mutex);
+    Lock lock(tMap.mutex);
 
-    tMap.erase (typeName);
+    if (tMap.find(typeName) != tMap.end())
+        THROW(IEX_NAMESPACE::ArgExc, "Cannot register image file attribute "
+            "type \"" << typeName << "\". "
+            "The type has already been registered.");
+
+    tMap.insert(TypeMap::value_type(typeName, newAttribute));
 }
 
 
-Attribute *
-Attribute::newAttribute (const char typeName[])
+void
+Attribute::unRegisterAttributeType(const char typeName[])
 {
     LockedTypeMap& tMap = typeMap();
-    Lock lock (tMap.mutex);
+    Lock lock(tMap.mutex);
 
-    TypeMap::const_iterator i = tMap.find (typeName);
+    tMap.erase(typeName);
+}
+
+
+Attribute*
+Attribute::newAttribute(const char typeName[])
+{
+    LockedTypeMap& tMap = typeMap();
+    Lock lock(tMap.mutex);
+
+    TypeMap::const_iterator i = tMap.find(typeName);
 
     if (i == tMap.end())
-	THROW (IEX_NAMESPACE::ArgExc, "Cannot create image file attribute of "
-			    "unknown type \"" << typeName << "\".");
+        THROW(IEX_NAMESPACE::ArgExc, "Cannot create image file attribute of "
+            "unknown type \"" << typeName << "\".");
 
     return (i->second)();
 }

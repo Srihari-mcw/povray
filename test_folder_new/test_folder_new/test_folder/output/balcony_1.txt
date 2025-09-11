@@ -1,0 +1,182 @@
+This is an example of a minimal console build of POV-Ray under Windows.
+
+Persistence of Vision(tm) Ray Tracer Version 3.8.0-beta.2.unofficial+msvc14.3.avx512.win64.
+This is an unofficial version compiled by:
+ manogna (elisetti.manognasree@multicorewareinc.com)
+ The POV-Ray Team is not responsible for supporting this version.
+
+Copyright 1991-2021 Persistence of Vision Raytracer Pty. Ltd.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Persistence of Vision(tm) Ray Tracer Version 3.8.0-beta.2.unofficial+msvc14.3.av
+x512.win64
+This is an unofficial version compiled by:
+ manogna (elisetti.manognasree@multicorewareinc.com)
+ The POV-Ray Team is not responsible for supporting this version.
+
+POV-Ray is based on DKBTrace 2.12 by David K. Buck & Aaron A. Collins
+Copyright 1991-2021 Persistence of Vision Raytracer Pty. Ltd.
+
+Primary POV-Ray v3.8 Architects/Developers: (Alphabetically)
+  Chris Cason         Christoph Lipka   
+
+With Assistance From: (Alphabetically)
+  Jerome Grimbert     James Holsenback    William F. Pokorny
+
+Past Contributors: (Alphabetically)
+  Steve Anger         Eric Barish         Dieter Bayer        David K. Buck     
+  Nicolas Calimet     Chris Cason         Aaron A. Collins    Chris Dailey      
+  Steve Demlow        Andreas Dilger      Alexander Enzmann   Dan Farmer        
+  Thorsten Froehlich  Mark Gordon         Jerome Grimbert     James Holsenback  
+  Christoph Hormann   Mike Hough          Chris Huff          Kari Kivisalo     
+  Nathan Kopp         Lutz Kretzschmar    Christoph Lipka     Jochen Lippert    
+  Pascal Massimino    Jim McElhiney       Douglas Muir        Juha Nieminen     
+  Ron Parker          William F. Pokorny  Bill Pulver         Eduard Schwan     
+  Wlodzimierz Skiba   Robert Skinner      Yvo Smellenbergh    Zsolt Szalavari   
+  Scott Taylor        Massimo Valentini   Timothy Wegner      Drew Wells        
+  Chris Young       
+
+Other contributors are listed in the documentation.
+
+Support libraries used by POV-Ray:
+  ZLib 1.2.7, Copyright 1995-2012 Jean-loup Gailly and Mark Adler
+  LibPNG 1.5.14, Copyright 1998-2012 Glenn Randers-Pehrson
+  LibJPEG 9, Copyright 1991-2016 Thomas G. Lane, Guido Vollbeding
+  LibTIFF 3.8.2, Copyright 1988-1997 Sam Leffler, 1991-1997 SGI
+  Boost 1.62, http://www.boost.org/
+  OpenEXR 2.2.0 and IlmBase 2.2.0, Copyright (c) 2002-2011 Industrial Light &
+ Magic.
+
+Dynamic optimizations:
+  CPU detected: AMD,SSE2,AVX,AVX2,AVX512,FMA3
+  Noise generator: avx512-mcw (hand-optimized by MCW)
+
+Parser Options
+  Input file: balcony.pov
+  Remove bounds........On 
+  Split unions.........Off
+  Library paths:
+  Clock value:    0.000  (Animation off)
+Image Output Options
+  Image resolution.....120 by 90 (rows 1 to 90, columns 1 to 120).
+  Output file..........balcony.png, 24 bpp PNG
+  Dithering............Off
+  Graphic display......Off
+  Mosaic preview.......Off
+  Continued trace......Off
+Information Output Options
+  All Streams to console..........On 
+  Debug Stream to console.........On 
+  Fatal Stream to console.........On 
+  Render Stream to console........On 
+  Statistics Stream to console....On 
+  Warning Stream to console.......On 
+File 'shapes.inc' line 493: Parse Warning:  Round_Box() macro called with z-size
+ < Radius, results may not be as expected 
+----------------------------------------------------------------------------
+Parser Statistics
+----------------------------------------------------------------------------
+Finite Objects:          497
+Infinite Objects:          3
+Light Sources:             1
+Total:                   501
+----------------------------------------------------------------------------
+Parser Time
+  Parse Time:       0 hours  0 minutes  0 seconds (0.119 seconds)
+              using 1 thread(s) with 0.109 CPU-seconds total
+  Bounding Time:    0 hours  0 minutes  0 seconds (0.000 seconds)
+              using 1 thread(s) with 0.000 CPU-seconds total
+----------------------------------------------------------------------------
+Render Options
+  Quality:  9
+  Bounding boxes.......On   Bounding threshold: 3
+  Antialiasing.........Off
+Rendered 12 of 10800 pixels (0%)Rendered 24 of 10800 pixels (0%)Rendered 1048 of 10800 pixels (9%)Rendered 1816 of 10800 pixels (16%)Rendered 1828 of 10800 pixels (16%)Rendered 1840 of 10800 pixels (17%)Rendered 1852 of 10800 pixels (17%)Rendered 1861 of 10800 pixels (17%)Rendered 1870 of 10800 pixels (17%)Rendered 1879 of 10800 pixels (17%)Rendered 1888 of 10800 pixels (17%)Rendered 1895 of 10800 pixels (17%)Rendered 1943 of 10800 pixels (17%)Rendered 1991 of 10800 pixels (18%)Rendered 2039 of 10800 pixels (18%)Rendered 2087 of 10800 pixels (19%)Rendered 2135 of 10800 pixels (19%)Rendered 2171 of 10800 pixels (20%)Rendered 2210 of 10800 pixels (20%)Rendered 2249 of 10800 pixels (20%)Rendered 2288 of 10800 pixels (21%)Rendered 2317 of 10800 pixels (21%)Rendered 2509 of 10800 pixels (23%)Rendered 2701 of 10800 pixels (25%)Rendered 2893 of 10800 pixels (26%)Rendered 3085 of 10800 pixels (28%)Rendered 3277 of 10800 pixels (30%)Rendered 3421 of 10800 pixels (31%)Rendered 3577 of 10800 pixels (33%)Rendered 3733 of 10800 pixels (34%)Rendered 3889 of 10800 pixels (36%)Rendered 4006 of 10800 pixels (37%)Rendered 4777 of 10800 pixels (44%)Rendered 5548 of 10800 pixels (51%)Rendered 6319 of 10800 pixels (58%)Rendered 7090 of 10800 pixels (65%)Rendered 7861 of 10800 pixels (72%)Rendered 8439 of 10800 pixels (78%)Rendered 9065 of 10800 pixels (83%)Rendered 9691 of 10800 pixels (89%)Rendered 10317 of 10800 pixels (95%)Rendered 10786 of 10800 pixels (99%)Rendered 1024 of 10800 pixels (9%)Rendered 2048 of 10800 pixels (18%)Rendered 3072 of 10800 pixels (28%)Rendered 3840 of 10800 pixels (35%)Rendered 4864 of 10800 pixels (45%)Rendered 5888 of 10800 pixels (54%)Rendered 6912 of 10800 pixels (64%)Rendered 7680 of 10800 pixels (71%)Rendered 8512 of 10800 pixels (78%)Rendered 9344 of 10800 pixels (86%)Rendered 10176 of 10800 pixels (94%)Rendered 10800 of 10800 pixels (100%)
+----------------------------------------------------------------------------
+Render Statistics
+Image Resolution 120 x 90
+----------------------------------------------------------------------------
+Pixels:            19198   Samples:               0   Smpls/Pxl: 0.00
+Rays:             998944   Saved:             28911   Max Level: 15/15
+----------------------------------------------------------------------------
+Ray->Shape Intersection          Tests       Succeeded  Percentage
+----------------------------------------------------------------------------
+Box                            4944216          716730     14.50
+Cone/Cylinder                  2212287          693177     31.33
+CSG Intersection               3524045          454864     12.91
+CSG Merge                       370029          201524     54.46
+CSG Union                       300773           26061      8.66
+Height Field                    132094           11305      8.56
+Height Field Box                132094          129670     98.16
+Height Field Triangle           389285           11865      3.05
+Height Field Block              630178          169867     26.96
+Height Field Cell              1881966          209939     11.16
+Isosurface                      398125           60078     15.09
+Isosurface Container            398984          398982    100.00
+Isosurface Cache                102784            1955      1.90
+Mesh                            288632           68053     23.58
+Plane                          4346548         1728383     39.76
+Sphere                         1163224          939524     80.77
+Torus                          1396907           73042      5.23
+Torus Bound                    1396907           87911      6.29
+Bounding Box                  74841458        19279574     25.76
+----------------------------------------------------------------------------
+Isosurface roots:            397882
+Function VM calls:          4122406
+----------------------------------------------------------------------------
+Roots tested:                 87911   eliminated:                25606
+Shadow Ray Tests:            583215   Succeeded:                264425
+Shadow Cache Hits:            95677
+Reflected Rays:              123795   Total Internal:             3437
+Refracted Rays:               90229
+----------------------------------------------------------------------------
+Radiosity samples calculated:             5727 (56.88 %)
+  discarded due to low quality:             10
+  retained for re-use:                    5717
+Radiosity samples reused:                 4341
+Radiosity sample rays shot:             744510
+Radiosity octree nodes:                   1323
+Radiosity octree samples/node:            4.32
+Radiosity blocks examined:             3675993
+Radiosity blocks passed test 0:        3675993 (100.00 %)
+Radiosity blocks passed test 1:         574416 (15.63 %)
+Radiosity blocks passed test 2:         452575 (12.31 %)
+Radiosity blocks passed test 3:          68125 (1.85 %)
+Radiosity blocks passed test 4:          52450 (1.43 %)
+Radiosity blocks passed test 5:          48670 (1.32 %)
+Radiosity blocks rejected:             3627323 (98.68 %)
+----------------------------------------------------------------------------
+Radiosity Depth 0 calculated:             5727 (56.88 %)
+Radiosity Depth 0 reused:                 4341
+Radiosity Depth 0 rays shot:            744510
+----------------------------------------------------------------------------
+Radiosity (final) calculated:             1156 (22.00 %)
+Radiosity (final) reused:                 4099
+Radiosity (final) rays shot:            150280
+----------------------------------------------------------------------------
+  Pass     Depth 0           Total
+----------------------------------------------------------------------------
+  1             77              77
+  2            243             243
+  3            922             922
+  4           3329            3329
+  Final       1156            1156
+----------------------------------------------------------------------------
+  Total       5727            5727
+  Weight     0.238 
+----------------------------------------------------------------------------
+Number of photons shot:           21212
+Surface photons stored:           26925
+Gather function called:          688571
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+Render Time:
+  Photon Time:      0 hours  0 minutes  0 seconds (0.115 seconds)
+              using 4 thread(s) with 0.140 CPU-seconds total
+  Radiosity Time:   0 hours  0 minutes  2 seconds (2.931 seconds)
+              using 1 thread(s) with 2.937 CPU-seconds total
+  Trace Time:       0 hours  0 minutes  0 seconds (0.819 seconds)
+              using 1 thread(s) with 0.828 CPU-seconds total
+POV-Ray finished
+

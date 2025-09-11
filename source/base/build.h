@@ -126,7 +126,7 @@
 ///
 #ifndef BUILT_BY
     #define BUILT_BY "YOUR NAME (YOUR EMAIL)"
-    #error "Please fill in BUILT_BY, then remove this line"
+    //#error "Please fill in BUILT_BY, then remove this line"
 #endif
 
 /// @}
